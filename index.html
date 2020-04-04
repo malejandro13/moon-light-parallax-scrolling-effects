@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Moon Light Parallax Effects | Vanilla Javascript</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+        
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <section class="parallax-section">
+            <img class="parallax-section__img" src="img/bg.jpg" alt="bg" id="bg">
+            <img class="parallax-section__img" src="img/moon.png" alt="moon" id="moon">
+            <img class="parallax-section__img" src="img/mountain.png" alt="mountain" id="mountain">
+            <img class="parallax-section__img parallax-section__img--road" src="img/road.png" alt="road" id="road">
+            <h2 class="parallax-section__title" id="title">Moon Light</h2>
+        </section>
+
+        <script>
+            let bg = document.getElementById('bg')
+            let moon = document.getElementById('moon')
+            let mountain = document.getElementById('mountain')
+            let road = document.getElementById('road')
+            let title = document.getElementById('title')
+
+            window.addEventListener('scroll', function() {
+                let value = window.scrollY;
+
+                bg.style.top = `${value * .5}px`
+                moon.style.left = `${-value * .5}px`
+                mountain.style.top = `${-value * .15}px`
+                road.style.top = `${value * .15}px`
+                title.style.top = `${value * 1}px`
+                
+            })
+        </script>
+    </body>
+</html>
